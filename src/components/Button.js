@@ -17,3 +17,5 @@ const Button = styled.button`
     background-color: #005fa3;
   }
 `;
+
+export default Button;
