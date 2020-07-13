@@ -1,13 +1,10 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import ReactMarkdown from 'react-markdown';
 import { format } from 'date-fns';
 import styled from 'styled-components';
+import { useQuery } from '@apollo/client';
 
-// import logged in user UI components
 import NoteUser from './NoteUser';
-
-// import the IS_LOGGED_IN local query
 import { IS_LOGGED_IN } from '../gql/query';
 
 // Keep notes from extending wider than 800px
