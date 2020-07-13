@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import NoteUser from './NoteUser';
 
 // import the IS_LOGGED_IN local query
-import { isLoggedIn } from '../gql/query';
+import { IS_LOGGED_IN } from '../gql/query';
 
 // Keep notes from extending wider than 800px
 const StyledNote = styled.article`
@@ -53,9 +53,15 @@ const Note = ({ note }) => {
           <em>by</em> {note.author.username} <br />
           {format(note.createdAt, 'MMM Do YYYY')}
         </MetaInfo>
-        <UserActions>
-          <em>Favorites:</em> {note.favoriteCount}
-        </UserActions>
+        {data.isLoggedIn ? (
+          <UserActions>
+            <NoteUser note={note} />
+          </UserActions>
+        ) : (
+          <UserActions>
+            <em>Favorites:</em> {note.favoriteCount}
+          </UserActions>
+        )}
       </MetaData>
       <ReactMarkdown source={note.content} />
     </StyledNote>

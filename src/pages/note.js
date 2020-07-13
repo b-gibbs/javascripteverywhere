@@ -1,25 +1,9 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 
 // import the Note component
 import Note from '../components/Note';
-
-// the note query, which accepts a note's ID as a parameter
-const GET_NOTE = gql`
-  query note($id: ID!) {
-    note(id: $id) {
-      id
-      createdAt
-      content
-      favoriteCount
-      author {
-        username
-        id
-        avatar
-      }
-    }
-  }
-`;
+import { GET_NOTE } from '../gql/query';
 
 const NotePage = props => {
   // store the id found in the url as a variable

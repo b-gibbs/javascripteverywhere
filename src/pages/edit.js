@@ -1,9 +1,8 @@
 import React from 'react';
-import { useQuery, useMutation, gql } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 
 // import the Note component
 import NoteForm from '../components/NoteForm';
-import Note from '../components/Note';
 import { GET_NOTE, GET_ME } from '../gql/query';
 import { EDIT_NOTE } from '../gql/mutation';
 
